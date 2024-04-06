@@ -65,7 +65,7 @@ export default SignUp  = () => {
         <Text className='text-right w-[280] text-darkgreen p-2'>Quên mật khẩu?</Text>
         <TouchableOpacity className='py-4 px-8 mt-2 bg-darkgreen rounded-md w-[280] flex items-center' onPress={handlePress}><Text className='text-xl text-white'>Đăng nhập</Text></TouchableOpacity>
         <Text className='pt-2'>Bạn chưa có tài khoản ? <Text className='text-darkgreen'>Đăng ký</Text></Text>
-        <NavBar></NavBar>
+        //<NavBar></NavBar>
       </View>
     </TailwindProvider>
   );
