@@ -23,7 +23,7 @@ export default Teams = () =>
 
     return(
         <View className='h-screen'>
-            <Text className='w-screen pl-5 text-left text-xl text-darkblue  font-bold'>Inovations</Text>
+            <Text className='w-screen pl-5 text-left text-xl text-darkblue  font-bold'>Invitations</Text>
             <View className='flex justify-center items-center shadow-lg border border-gray-200 p-3 h-[120] m-5  bg-white py-2'>
                 <Text className='font-bold text-xl pt-2'>Hapo Project</Text>
                 <View className='flex flex-row py-2 justify-center items-center align-items'>

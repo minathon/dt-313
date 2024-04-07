@@ -26,7 +26,7 @@ export default Homepage = () =>
     const [timelineData, setTimelineData] = useState([
         { time: '00:00', task: 'Sleeping Time' },
         { time: '06:00', task: 'Working' },
-        { time: '11:00', task: 'Breakfast' },
+        { time: '11:00', task: 'Non-working time' },
         { time: '13:00', task: 'Lunch' },
         { time: '17:00', task: 'Exercise' },
         { time: '19:00', task: 'Dinner' },
