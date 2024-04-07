@@ -4,7 +4,7 @@ import LottieView from 'lottie-react-native';
 import { TailwindProvider } from 'tailwindcss-react-native';
 import { useNavigation } from '@react-navigation/native';
 import {Entypo,Ionicons,FontAwesome6,MaterialCommunityIcons,Feather} from "react-native-vector-icons";
-
+import NavBar from "../assets/components/NavBar";
 export default Teams = () => 
 {
     return(
@@ -66,6 +66,10 @@ export default Teams = () =>
                     <Text className='text-lg text-center text-red-600'>Leave Group</Text>
                     </View>
             </View>
+            <View className='pt-44 mb-0 pb-0'>
+                <NavBar></NavBar>
+            </View>
+            
         </View>
     );
 }

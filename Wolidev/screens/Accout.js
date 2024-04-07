@@ -8,13 +8,13 @@ export default Account = () =>
 {
     return(
         <TailwindProvider>
-            <View className='flex-1 items-center pt-10'>
+            <View className='flex-1 items-center pt-10 '>
                 <Image
                 className='w-[80] h-[80] rounded-full mr-4'
                 source={{uri:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'}}
                 />
                 <Text className='font-bold text-darkgreen text-xl pt-2 pb-10'>Amelia Renata</Text>
-                <ScrollView>
+                <ScrollView className='pb-25'>
                     <View className='flex flex-row items-center pb-4'>
                         <View className='rounded-full bg-light p-2 mr-3'>
                             <Entypo name='time-slot' size={20} className='text-darkgreen'></Entypo>
@@ -51,6 +51,7 @@ export default Account = () =>
                         <TouchableOpacity><Feather name='chevron-right' size={20}></Feather></TouchableOpacity>
                     </View>
                 </ScrollView>
+
             </View>
         </TailwindProvider>
     );

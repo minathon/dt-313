@@ -35,7 +35,7 @@ export default NavBar = () =>
         return selectedIcon === iconName ? '#199A8E' : '#000'; 
     }
     return (
-        <View className='flex flex-row w-screen px-4 justify-between'>
+        <View className='flex flex-row grow w-screen px-4 justify-between'>
             <TouchableOpacity onPress={pressTimer} className='mr-4'><Ionicons name='timer' size={40}/></TouchableOpacity>
             <TouchableOpacity onPress={pressCommu} className='mr-4'><Ionicons name='earth-sharp' size={40}/></TouchableOpacity>
             <TouchableOpacity onPress={pressHome} className='mr-4'><Entypo name='home' size={40}/></TouchableOpacity>

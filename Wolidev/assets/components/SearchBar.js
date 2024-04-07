@@ -18,7 +18,7 @@ export default SearchBar = () =>{
                     <View >
                         <TextInput
                         className='p-4 w-[260] text-sm text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500'
-                        placeholder="Find something here ..."
+                        placeholder="What are you looking for ..."
                         placeholderTextColor="gray"
                         onChangeText={setSearchQuery}
                         onSubmitEditing={handleSubmit}

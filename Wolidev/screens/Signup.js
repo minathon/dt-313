@@ -64,7 +64,6 @@ export default SignUp  = () => {
         </View>
         <TouchableOpacity className='py-4 px-8 mt-4 bg-darkgreen rounded-md w-[280] flex items-center' onPress={handlePress}><Text className='text-xl text-white'>Sign Up</Text></TouchableOpacity>
         <Text className='pt-2'>Have an account ? <Text className='text-darkgreen'>Login</Text></Text>
-        <NavBar></NavBar>
       </View>
     </TailwindProvider>
   );

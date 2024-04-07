@@ -3,7 +3,8 @@ import { View, Text, TextInput,Image,TouchableOpacity} from "react-native";
 import LottieView from 'lottie-react-native';
 import { TailwindProvider } from 'tailwindcss-react-native';
 import { useNavigation } from '@react-navigation/native';
-import TimerCom from '../assets/components/TimerCom'
+import TimerCom from '../assets/components/TimerCom';
+import NavBar from "../assets/components/NavBar";
 export default Timer = () => 
 {     const navigation = useNavigation();
     const handlePress = () =>

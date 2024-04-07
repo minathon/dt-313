@@ -3,6 +3,7 @@ import { View, Text, TextInput,Image,TouchableOpacity, ScrollView,Modal} from "r
 import MyDatePicker from "../assets/components/DatePicker";
 import {FontAwesome,FontAwesome6} from 'react-native-vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import NavBar from "../assets/components/NavBar";
 export default Homepage = () =>
 {   const navigation = useNavigation();
     const play = () =>
@@ -10,14 +11,16 @@ export default Homepage = () =>
         navigation.navigate('Timer');
     }
     const [modalVisible, setModalVisible] = useState(false);
+    const [modalVisible2, setModalVisible2] = useState(false);
     const [newTask, setNewTask] = useState("");
     const [newTime, setNewTime] = useState("");
+    const [newTime2, setNewTime2] = useState("");
     const handleAddTimeline = () => {
-        const newTimeline = { time: newTime, task: newTask }; // Tạo timeline mới với dữ liệu nhập vào
+        const newTimeline = { time: newTime, task: newTask };
         setTimelineData([...timelineData, newTimeline]);
-        setModalVisible(false); // Ẩn modal sau khi thêm
-        setNewTask(""); // Reset giá trị của khung nhập liệu
-        setNewTime(""); // Reset giá trị của khung nhập liệu
+        setModalVisible(false); 
+        setNewTask(""); 
+        setNewTime(""); 
     }
 
     const [timelineData, setTimelineData] = useState([
@@ -73,6 +76,44 @@ export default Homepage = () =>
             >
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
                     <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, width: '80%' }}>
+                        <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>Add New Timeline</Text>
+                        <TextInput
+                            style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10 }}
+                            placeholder="Enter task name"
+                            value={newTask}
+                            onChangeText={(text) => setNewTask(text)}
+                        />
+                        <TextInput
+                            style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10 }}
+                            placeholder="Start time"
+                            value={newTime}
+                            onChangeText={(text) => setNewTime(text)}
+                        />
+                        <TextInput
+                            style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10 }}
+                            placeholder="End time"
+                            value={newTime2}
+                            // onChangeText={(text) => setNewTime(text)}
+                        />
+                        <TouchableOpacity onPress={handleAddTimeline} style={{ backgroundColor: '#199A8E', padding: 10, borderRadius: 5 }}>
+                            <Text style={{ color: 'white', textAlign: 'center' }}>Add</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </Modal>
+            <Text className='w-screen p-5 text-left text-xl text-darkblue  font-bold flex justify-center align-items items-center'>Task <TouchableOpacity onPress={() => setModalVisible2(true)} className='ml-4 flex flex-row items-center'>
+                    <FontAwesome name='plus-circle' size={15} className='text-darkgreen mr-2'></FontAwesome>
+                </TouchableOpacity></Text>
+                <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible2}
+                onRequestClose={() => {
+                    setModalVisible2(false);
+                }}
+            >
+                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                    <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, width: '80%' }}>
                         <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>Add New Task</Text>
                         <TextInput
                             style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10 }}
@@ -82,9 +123,14 @@ export default Homepage = () =>
                         />
                         <TextInput
                             style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10 }}
-                            placeholder="Enter time"
+                            placeholder="Start time"
                             value={newTime}
                             onChangeText={(text) => setNewTime(text)}
+                        />
+                        <TextInput
+                            style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10 }}
+                            placeholder="End time"
+                            // onChangeText={(text) => setNewTime(text)}
                         />
                         <TouchableOpacity onPress={handleAddTimeline} style={{ backgroundColor: '#199A8E', padding: 10, borderRadius: 5 }}>
                             <Text style={{ color: 'white', textAlign: 'center' }}>Add</Text>
@@ -92,7 +138,6 @@ export default Homepage = () =>
                     </View>
                 </View>
             </Modal>
-            <Text className='w-screen p-5 text-left text-xl text-darkblue  font-bold'>Task</Text>
             <ScrollView className='w-full h-1/4'>
                 {/* <View className='w-1/4'>
                     <TouchableOpacity className='rounded-full w-[30] h-[30] bg-light flex items-center justify-center'>
@@ -116,7 +161,9 @@ export default Homepage = () =>
                 </ScrollView>
                 
             </ScrollView>
-            <Text className='w-screen p-5 text-left text-xl text-darkblue  font-bold '>Github</Text>
+            <Text className='w-screen p-5 pb-28 text-left text-xl text-darkblue  font-bold '>Github</Text>
+            <NavBar></NavBar>
+            
         </View>
     );
 }
