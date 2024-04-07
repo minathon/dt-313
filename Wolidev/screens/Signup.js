@@ -15,7 +15,7 @@ export default SignUp  = () => {
   };
   const handlePress = () => {
     console.log("Button pressed");
-    //navigation.navigate('User Management');
+    navigation.navigate('Login');
   };
   return (
     <TailwindProvider>
@@ -62,9 +62,8 @@ export default SignUp  = () => {
 
           </TextInput>
         </View>
-        <Text className='text-right w-[280] text-darkgreen p-2'>Quên mật khẩu?</Text>
-        <TouchableOpacity className='py-4 px-8 mt-2 bg-darkgreen rounded-md w-[280] flex items-center' onPress={handlePress}><Text className='text-xl text-white'>Đăng nhập</Text></TouchableOpacity>
-        <Text className='pt-2'>Bạn chưa có tài khoản ? <Text className='text-darkgreen'>Đăng ký</Text></Text>
+        <TouchableOpacity className='py-4 px-8 mt-4 bg-darkgreen rounded-md w-[280] flex items-center' onPress={handlePress}><Text className='text-xl text-white'>Sign Up</Text></TouchableOpacity>
+        <Text className='pt-2'>Have an account ? <Text className='text-darkgreen'>Login</Text></Text>
         <NavBar></NavBar>
       </View>
     </TailwindProvider>

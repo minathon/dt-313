@@ -9,6 +9,7 @@ module.exports = {
           'darkblue':'#293477',
           'lightblue':'#BED4FF',
           'superlight':'#DAEBFF',
+          "light":"#DDFFF8"
         }
       },
       
