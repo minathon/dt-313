@@ -6,6 +6,11 @@ import { useNavigation } from '@react-navigation/native';
 import {Feather, Entypo} from 'react-native-vector-icons';
 export default Account = () =>
 {
+    const navigation = useNavigation();
+    const handlePress = () =>
+    {
+        navigation.navigate('Login');
+    }
     return(
         <TailwindProvider>
             <View className='flex-1 items-center pt-10 '>
@@ -48,7 +53,7 @@ export default Account = () =>
                             <Entypo name='warning' size={20} className='text-red-900'></Entypo>
                         </View>
                         <Text className='font-bold text-lg w-[240] text-red-600 '>Log out</Text>
-                        <TouchableOpacity><Feather name='chevron-right' size={20}></Feather></TouchableOpacity>
+                        <TouchableOpacity onPress={handlePress}><Feather name='chevron-right' size={20}></Feather></TouchableOpacity>
                     </View>
                 </ScrollView>
 

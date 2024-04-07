@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TextInput,Image,TouchableOpacity, ScrollView,Modal} from "react-native"
 import MyDatePicker from "../assets/components/DatePicker";
-import {FontAwesome,FontAwesome6} from 'react-native-vector-icons';
+import {FontAwesome,Ionicons} from 'react-native-vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import NavBar from "../assets/components/NavBar";
 export default Homepage = () =>
@@ -45,15 +45,19 @@ export default Homepage = () =>
             <Text className="font-bold text-3xl pt-3">
                 It's working time !!!
             </Text>
-            <Text className='w-screen pl-5 text-left text-xl text-darkblue  font-bold'>Timeline</Text>
+            <Text className='w-screen pl-5 text-left text-xl text-darkblue font-bold'>Timeline</Text>
             <View className='flex flex-row w-full'> 
-            <TouchableOpacity className='py-2 px-8 my-2 mx-4 bg-darkgreen rounded-md w-[1/2] flex flex-row  items-center'>
-            <FontAwesome name='calendar' size={20} className='text-white mr-2'></FontAwesome>
-                <Text className='text-xl text-white'>Today</Text></TouchableOpacity>
+                <TouchableOpacity className='py-2 px-8 my-2 mx-4 bg-darkgreen rounded-md w-1/4 flex flex-row  items-center'>
+                <FontAwesome name='calendar' size={20} className='text-white mr-2'></FontAwesome>
+                <Text className='text-sm text-white'>Today</Text></TouchableOpacity>
             
-                <TouchableOpacity onPress={() => setModalVisible(true)} className='py-2 px-8 my-2 mx-4 bg-darkgreen rounded-md w-[1/2] flex flex-row items-center'>
+                <TouchableOpacity onPress={() => setModalVisible(true)} className='py-2 px-8 my-2 mx-4 bg-darkgreen rounded-md w-1/4 flex flex-row items-center'>
                     <FontAwesome name='plus-circle' size={20} className='text-white mr-2'></FontAwesome>
-                    <Text className='text-xl text-white'>Add</Text>
+                    <Text className='text-sm text-white'>Add</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => setModalVisible(true)} className='py-2 px-8 my-2 mx-4 bg-darkgreen rounded-md w-1/4 flex flex-row items-center'>
+                    <Ionicons name='create' size={20} className='text-white mr-2'></Ionicons>
+                    <Text className='text-sm text-white'>Creat</Text>
                 </TouchableOpacity>
 
             </View>
@@ -93,7 +97,7 @@ export default Homepage = () =>
                             style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10 }}
                             placeholder="End time"
                             value={newTime2}
-                            // onChangeText={(text) => setNewTime(text)}
+                            onChangeText={(text) => setNewTime2(text)}
                         />
                         <TouchableOpacity onPress={handleAddTimeline} style={{ backgroundColor: '#199A8E', padding: 10, borderRadius: 5 }}>
                             <Text style={{ color: 'white', textAlign: 'center' }}>Add</Text>
@@ -130,6 +134,7 @@ export default Homepage = () =>
                         <TextInput
                             style={{ borderWidth: 1, borderColor: 'gray', padding: 10, marginBottom: 10 }}
                             placeholder="End time"
+                            value={newTime}
                             // onChangeText={(text) => setNewTime(text)}
                         />
                         <TouchableOpacity onPress={handleAddTimeline} style={{ backgroundColor: '#199A8E', padding: 10, borderRadius: 5 }}>
@@ -161,7 +166,18 @@ export default Homepage = () =>
                 </ScrollView>
                 
             </ScrollView>
-            <Text className='w-screen p-5 pb-28 text-left text-xl text-darkblue  font-bold '>Github</Text>
+            <Text className='w-screen p-5  text-left text-xl text-darkblue  font-bold '>Github</Text>
+            <View className="mb-20">
+                        <View className='flex flex-row px-5'>
+                            <Text className='text-left w-1/2 text-xl font-bold'>Issue GitHub</Text>
+                            <Text className='text-right w-1/2'>20:00</Text>
+                        </View>
+                        <View className='flex flex-row px-4 py-2'>
+                            <Text className='bg-yellow-200 text-yellow-700 w-1/4 text-center py-1 mr-2'>Github</Text>
+                            <Text className='bg-red-200 text-red-700 w-1/4 text-center py-1'>Issue</Text>
+                            <FontAwesome name="play" onPress={play} size={25} className="text-right text-gray-600 w-2/4 px-2"/>
+                        </View>
+            </View>
             <NavBar></NavBar>
             
         </View>
